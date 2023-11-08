@@ -16,6 +16,16 @@ const HomePage = () => {
     const [builds, setBuilds] = useState<Build[]>([])
     const [rows, setRows] = useState<Build[]>([])
 
+    const [filter, setFilter] = useState<any>({
+        job: undefined,
+        cost: undefined,
+        pve: undefined,
+        level: {
+            start: undefined,
+            end: undefined
+        }
+    })
+
     useEffect(() => {
         getAll().then((response) => {
             setBuilds(response)
@@ -24,47 +34,51 @@ const HomePage = () => {
     }, [])
 
     const onFilterCost = (cost: string) => {
-        if (cost === "none") {
+        const costValue = cost === "all" ? undefined : cost
+
+        if (costValue)
+            setRows(builds.filter((build) => build.cost === costValue))
+        else
             setRows(builds)
-            return
-        }
-        setRows(builds.filter(build => build.cost === cost))
     }
 
     const onFilterUsage = (mode: string) => {
-        if (mode === "all") {
+        const modeValue = mode === "all" ? undefined : mode === "PVE"
+
+        if (modeValue)
+            setRows(builds.filter((build) => build.pve === modeValue))
+        else    
             setRows(builds)
-            return
-        }
-        const pve = mode === "PVE";
-        setRows(builds.filter(build => build.pve === pve))
     }
 
     const onFilterLevel = (start: Level | undefined, end: Level | undefined) => {
         setLevelRange({start, end})
-
-        if (start === undefined || end === undefined) {
+        if (start && end) {
+            setRows(builds.filter((build) => build.level.start >= start && build.level.end <= end))
+        } else    
             setRows(builds)
-            return;
-        }
-        setRows(builds.filter(build => build.level.start === start && build.level.end === end))
     }
 
     const onBuildNameSearch = (query: string) => {
-        setRows(builds.find((build) => build.name.toLowerCase().includes(query.toLowerCase())) ? builds.filter((build) => build.name.toLowerCase().includes(query.toLowerCase())) : [])
+        setRows(rows.find((build) => build.name.toLowerCase().includes(query.toLowerCase())) ? builds.filter((build) => build.name.toLowerCase().includes(query.toLowerCase())) : [])
+    }
+
+    const onFilterJob = (job: string) => {
+        setRows(builds.filter((build) => build.job === job))
+        setFilter({...filter, job})
     }
 
     return <>
-       <body className='px-6 md:px-28 py-6'>
+       <div className='px-6 md:px-28 py-6'>
 
             <div className='w-full flex flex-col md:flex-row justify-between'>
-                <h1 className='text-xl font-bold text-white'>Meta Build</h1>
+                <h1 className='text-xl font-bold text-white'>Explorer</h1>
             
                 <div className='flex flex-wrap md:space-x-6 justify-start mt-2 md:mt-0'>
 
                     <div className="m-2">
-                        <select onChange={(e) => onFilterCost(e.target.value)} id="underline_select" className="block w-full py-1.5 px-4 text-sm  border rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
-                            <option selected value="none">Tous budget</option>
+                        <select defaultValue={"all"} onChange={(e) => onFilterCost(e.target.value)} id="underline_select" className="block w-full py-1.5 px-4 text-sm  border rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                            <option value="all">Tous budget</option>
                             {
                                 prices.map((price, key) => {
                                     return (
@@ -76,8 +90,8 @@ const HomePage = () => {
                     </div>
                     
                     <div className="m-2">
-                        <select onChange={(e) => onFilterUsage(e.target.value)} id="underline_select" className="block w-full py-1.5 px-4 text-sm  border rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
-                            <option selected value={"all"}>PVE & PVP</option>
+                        <select defaultValue="all" onChange={(e) => onFilterUsage(e.target.value)} id="underline_select" className="block w-full py-1.5 px-4 text-sm  border rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                            <option  value={"all"}>PVE & PVP</option>
                             <option  value={"PVE"}>PVE</option>
                             <option value={"PVP"}>PVP</option>
                         </select>
@@ -88,7 +102,7 @@ const HomePage = () => {
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg className="w-4 h-4 text-white dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                 </svg>
                             </div>
                             <input onChange={(e) => onBuildNameSearch(e.target.value)} type="search" id="default-search" className="block w-full py-1.5 px-4 pl-10 text-sm  border border-gray-300 rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Rechercher un build..." required/>
@@ -101,7 +115,7 @@ const HomePage = () => {
                 <div className='w-96 flex flex-wrap'>
                     {
                         classes.map((classe, key) => {
-                            return <button key={key} className='w-16 h-16 bg-white bg-opacity-5  hover:bg-opacity-20 m-2 items-center px-auto'>
+                            return <button onClick={() => onFilterJob(classe.label)} key={key} className={`w-16 h-16  m-2 items-center px-auto bg-white  ${filter.job === classe.label ? 'bg-opacity-20' : 'bg-opacity-5 hover:bg-opacity-20' }`}>
                                 <img className='h-12 w-12 mx-auto' alt={classe.label} src={'/classes/' + classe.picture} ></img>
                             </button>
                         })
@@ -154,7 +168,7 @@ const HomePage = () => {
            
             </div>
 
-    </body>
+    </div>
     </>
 }
 

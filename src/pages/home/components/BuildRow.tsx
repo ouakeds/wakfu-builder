@@ -43,12 +43,12 @@ const BuildRow: React.FC<BuildRowProps> = ({build, onFavorite, onWatch}) => {
             <div className="flex flex-wrap my-2">
                 <div className='flex flex-wrap justify-start items-center mt-2 md:mt-0 mr-4'>
                     {
-                        build.items.length > 0 ? build.items.map((slot: any) => {
-                            return <img src={'/item-category/' + slot.icon} className='h-8 md:h-10 w-8 md:w-10 mr-2 md:mt-0 border' alt={slot.label}/>
+                        build.items.length > 0 ? build.items.map((slot: any, key) => {
+                            return <img key={key} src={'/item-category/' + slot.icon} className='h-8 md:h-10 w-8 md:w-10 mr-2 md:mt-0 border' alt={slot.label}/>
                         }) :
                         
-                        defaultSlots.map((slot) => {
-                            return <img src={'/item-category/' + slot.icon} className='h-8 md:h-10 w-8 md:w-10 mr-2 md:mt-0 border' alt={slot.label}/>
+                        defaultSlots.map((slot, key) => {
+                            return <img key={key} src={'/item-category/' + slot.icon} className='h-8 md:h-10 w-8 md:w-10 mr-2 md:mt-0 border' alt={slot.label}/>
                         })
                     }
                 </div>
