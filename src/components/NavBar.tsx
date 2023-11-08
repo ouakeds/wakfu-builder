@@ -4,7 +4,7 @@ const NavBar = () => {
             <header className="w-screen sticky">
 
                 <div className=" bg-black px-6 md:px-28 py-2 flex justify-between items-center ">
-                    <h1 className='text-xl text-white font-bold'>Builder</h1>
+                    <h1 className='text-xl text-white font-bold'>Wakfu Builder</h1>
                     <div className='space-x-6'>
                         <button className='  text-blue-400 text-xs  px-2 md:px-6 py-1.5 font-semibold'>
                             Connexion

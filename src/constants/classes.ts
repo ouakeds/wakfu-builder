@@ -17,4 +17,5 @@ const classes = [
     {label: "Eniripsa", picture: 'eniripsa.webp' },
     {label: "Roublard", picture: 'roublard.webp' },
 ]
+
 export default classes

@@ -1,0 +1,1 @@
+export type Cost = 'low cost' | 'average' | 'expensive' | 'very expensive';
