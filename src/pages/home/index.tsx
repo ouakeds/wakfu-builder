@@ -13,28 +13,36 @@ const HomePage = () => {
         job: "xelor",
         author: "John Doe",
         items: [],
-        favorite: false
+        favorite: false,
+        upvotes: 0,
+        downvotes: 0
       },
       {
         name: "Build n2 IOP",
         job: "iop",
         author: "John Doe",
         items: [],
-        favorite: false
+        favorite: false,
+        upvotes: 0,
+        downvotes: 0
       },
       {
         name: "Cra Toz",
         job: "cra",
         author: "John Doe",
         items: [],
-        favorite: false
+        favorite: false,
+        upvotes: 0,
+        downvotes: 0
       },
       {
         name: "Ougi Niak",
         job: "ouginak",
         author: "John Doe",
         items: [],
-        favorite: false
+        favorite: false,
+        upvotes: 0,
+        downvotes: 0,
       }
     ])
 
@@ -44,10 +52,10 @@ const HomePage = () => {
             <div className='w-full flex flex-col md:flex-row justify-between'>
                 <h1 className='text-xl font-bold text-white'>Wakfu Meta Build</h1>
             
-                <div className='flex space-x-6 mt-2 md:mt-0'>
+                <div className='flex flex-wrap md:space-x-6 justify-start mt-2 md:mt-0'>
 
-                    <div>
-                        <select id="underline_select" className="block w-full py-1.5 px-4 text-sm  border border-gray-300 rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                    <div className="m-2">
+                        <select id="underline_select" className="block w-full py-1.5 px-4 text-sm  border rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
                             <option selected>Budget</option>
                             {
                                 prices.map((price, key) => {
@@ -60,14 +68,14 @@ const HomePage = () => {
                         </select>
                     </div>
 
-                    <div>
-                        <select id="underline_select" className="block w-full py-1.5 px-4 text-sm  border border-gray-300 rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                    <div className="m-2">
+                        <select id="underline_select" className="block w-full py-1.5 px-4 text-sm  border rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
                             <option selected>PVE</option>
                             <option>PVP</option>
                         </select>
                     </div>
 
-                    <form className='w-96'>  
+                    <form className='w-full md:w-96 m-2'>  
                         <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
