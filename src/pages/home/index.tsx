@@ -6,16 +6,15 @@ import Build from "../../types/build"
 import { Cost } from "../../types/cost"
 import { Level } from "../../types/level"
 
+const moduloLevels: Level[] = [20, 35, 50, 65, 80, 95, 110, 125, 140, 155, 170, 185, 200, 215, 230]
+const prices: Cost[] = ['low cost', 'average', 'expensive', 'very expensive']
+
 const HomePage = () => {
 
-    const moduloLevels: Level[] = [20, 35, 50, 65, 80, 95, 110, 125, 140, 155, 170, 185, 200, 215, 230]
-    const prices: Cost[] = ['low cost', 'average', 'expensive', 'very expensive']
     const {getAll} = useBuild();
-
     const [levelRange, setLevelRange] = useState<{start: Level | undefined, end: Level | undefined}>()
     const [builds, setBuilds] = useState<Build[]>([])
     const [rows, setRows] = useState<Build[]>([])
-
 
     useEffect(() => {
         getAll().then((response) => {
@@ -51,6 +50,10 @@ const HomePage = () => {
         setRows(builds.filter(build => build.level.start === start && build.level.end === end))
     }
 
+    const onBuildNameSearch = (query: string) => {
+        setRows(builds.find((build) => build.name.toLowerCase().includes(query.toLowerCase())) ? builds.filter((build) => build.name.toLowerCase().includes(query.toLowerCase())) : [])
+    }
+
     return <>
        <body className='px-6 md:px-28 py-6'>
 
@@ -84,11 +87,11 @@ const HomePage = () => {
                         <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <svg className="w-4 h-4 text-white dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                 </svg>
                             </div>
-                            <input type="search" id="default-search" className="block w-full py-1.5 px-4 pl-10 text-sm  border border-gray-300 rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Rechercher un build..." required/>
+                            <input onChange={(e) => onBuildNameSearch(e.target.value)} type="search" id="default-search" className="block w-full py-1.5 px-4 pl-10 text-sm  border border-gray-300 rounded-lg bg-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Rechercher un build..." required/>
                         </div>
                     </form>
                 </div>
