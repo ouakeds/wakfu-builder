@@ -15,11 +15,18 @@ const BuildRow: React.FC<BuildRowProps> = ({id, name, job, author, items, favori
     return (
         <div className='p-6 bg-gray-800 rounded-lg flex flex-wrap items-center justify-between w-full'>
             <div className='flex items-center'>
-                <img className='h-12 w-12 bg-white mr-2 md:mr-6' src={`/classes/${job}.webp`} alt="iop"></img>
-                <div className='flex flex-wrap justify-start items-center md:flex-col'>
-                    <h1 className='text-sm md:text-xl font-semibold text-white mr-2 md:mr-0'>{name}</h1>
-                    <h2 className='text-xs md:text-l font-semibold text-gray-400 mr-2 md:mr-0'>{author}</h2>
-                    <div className="bg-gray-600 text-white  rounded-lg md:mt-2 px-2 flex items-center w-fit space-x-2">
+                <img className='h-12 w-12 bg-white mr-4 md:mr-6' src={`/classes/${job}.webp`} alt="iop"></img>
+                <div className='flex flex-wrap justify-start md:flex-col'>
+                    <div className="flex items-center space-x-2">
+                        <h1 className='text-sm md:text-xl font-semibold text-white md:mr-0'>{name}</h1>
+                        <h2 className='text-xs md:text-l font-semibold text-gray-400 mr-2 md:mr-0'>Par {author}</h2>
+                    </div>
+                    <div className="flex items-center space-x-2 my-1 w-full">
+                        <span className='text-xs bg-blue-500 py-1 px-2 rounded-lg font-semibold text-white md:mr-0'>{"1-36"}</span>
+                        <span className='text-xs bg-red-500 py-1 px-2 rounded-lg font-semibold text-white md:mr-0'>{"Average"}</span>
+                        <span className='text-xs bg-green-500 py-1 px-2 rounded-lg font-semibold text-white md:mr-0'>{"PVE"}</span>
+                    </div>
+                    <div className="bg-gray-600 text-white  rounded-lg mt-1 md:mt-2 px-2 flex items-center w-fit space-x-2">
                         <button className="p-1.5 hover:bg-gray-500 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-2.5 h-2.5 md:w-4 md:h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
@@ -37,7 +44,7 @@ const BuildRow: React.FC<BuildRowProps> = ({id, name, job, author, items, favori
 
             </div>
 
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap my-2">
                 <div className='flex flex-wrap justify-start items-center mt-2 md:mt-0 mr-4'>
                     {
                         items.length > 0 ? items.map((slot: any) => {
