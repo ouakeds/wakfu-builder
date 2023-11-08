@@ -1,0 +1,320 @@
+{
+    "pages": 40790,
+    "results": 407894,
+    "builds": [
+        {
+            "name_job": "Enutrof",
+            "id_build": 951161,
+            "name_build": "Phorzer",
+            "date_build": "07-11-2023",
+            "level_build": 230,
+            "id_job": 3,
+            "link_build": "bd68f",
+            "private": 0,
+            "id_user": 4109,
+            "user": null,
+            "pictos": [
+                {
+                    "id_picto": 1,
+                    "name_picto": "D\u00e9g\u00e2ts",
+                    "gfx_id": "damage",
+                    "group_id": 1,
+                    "pivot": {
+                        "id_build": 951161,
+                        "id_picto": 1
+                    }
+                },
+                {
+                    "id_picto": 5,
+                    "name_picto": "Donjon",
+                    "gfx_id": "dungeon",
+                    "group_id": 2,
+                    "pivot": {
+                        "id_build": 951161,
+                        "id_picto": 5
+                    }
+                },
+                {
+                    "id_picto": 10,
+                    "name_picto": "Difficile",
+                    "gfx_id": "hard",
+                    "group_id": 3,
+                    "pivot": {
+                        "id_build": 951161,
+                        "id_picto": 10
+                    }
+                }
+            ],
+            "equipments_light": []
+        },
+        {
+            "name_job": "Eniripsa",
+            "id_build": 951160,
+            "name_build": "Heal",
+            "date_build": "07-11-2023",
+            "level_build": 50,
+            "id_job": 7,
+            "link_build": "782e6",
+            "private": 0,
+            "id_user": null,
+            "user": "88.166.142.157",
+            "pictos": [
+                {
+                    "id_picto": 2,
+                    "name_picto": "Soin",
+                    "gfx_id": "healing",
+                    "group_id": 1,
+                    "pivot": {
+                        "id_build": 951160,
+                        "id_picto": 2
+                    }
+                }
+            ],
+            "equipments_light": []
+        },
+        {
+            "name_job": "Eliotrope",
+            "id_build": 951159,
+            "name_build": "ELIO PVM 170",
+            "date_build": "07-11-2023",
+            "level_build": 170,
+            "id_job": 18,
+            "link_build": "20252",
+            "private": 0,
+            "id_user": 1837,
+            "user": null,
+            "pictos": [],
+            "equipments_light": [
+                {
+                    "id_equipment": 18678,
+                    "gfx_id": "34714271",
+                    "side": 646,
+                    "id_rarity": 4,
+                    "level": 150,
+                    "metadata": {
+                        "id_build": 951159,
+                        "id_equipment": 18678,
+                        "side": 646
+                    }
+                },
+                {
+                    "id_equipment": 27205,
+                    "gfx_id": "58227205",
+                    "side": 582,
+                    "id_rarity": 2,
+                    "level": 50,
+                    "metadata": {
+                        "id_build": 951159,
+                        "id_equipment": 27205,
+                        "side": 582
+                    }
+                }
+            ]
+        },
+        {
+            "name_job": "Huppermage",
+            "id_build": 951158,
+            "name_build": "Distance",
+            "date_build": "07-11-2023",
+            "level_build": 50,
+            "id_job": 19,
+            "link_build": "dd94d",
+            "private": 0,
+            "id_user": null,
+            "user": "79.95.86.165",
+            "pictos": [],
+            "equipments_light": []
+        },
+        {
+            "name_job": "Huppermage",
+            "id_build": 951156,
+            "name_build": "Distance",
+            "date_build": "07-11-2023",
+            "level_build": 230,
+            "id_job": 19,
+            "link_build": "9137f",
+            "private": 0,
+            "id_user": null,
+            "user": "79.95.86.165",
+            "pictos": [],
+            "equipments_light": []
+        },
+        {
+            "name_job": "Sram",
+            "id_build": 951155,
+            "name_build": "frost",
+            "date_build": "07-11-2023",
+            "level_build": 170,
+            "id_job": 4,
+            "link_build": "2a54f",
+            "private": 0,
+            "id_user": 1248,
+            "user": null,
+            "pictos": [],
+            "equipments_light": []
+        },
+        {
+            "name_job": "X\u00e9lor",
+            "id_build": 951154,
+            "name_build": "a",
+            "date_build": "07-11-2023",
+            "level_build": 20,
+            "id_job": 5,
+            "link_build": "c4fbd",
+            "private": 0,
+            "id_user": null,
+            "user": "81.132.88.52",
+            "pictos": [],
+            "equipments_light": [
+                {
+                    "id_equipment": 4528,
+                    "gfx_id": "1344528",
+                    "side": 134,
+                    "id_rarity": 3,
+                    "level": 18,
+                    "metadata": {
+                        "id_build": 951154,
+                        "id_equipment": 4528,
+                        "side": 134
+                    }
+                },
+                {
+                    "id_equipment": 14711,
+                    "gfx_id": "12014711",
+                    "side": 120,
+                    "id_rarity": 3,
+                    "level": 17,
+                    "metadata": {
+                        "id_build": 951154,
+                        "id_equipment": 14711,
+                        "side": 120
+                    }
+                },
+                {
+                    "id_equipment": 20666,
+                    "gfx_id": "1039367",
+                    "side": 23,
+                    "id_rarity": 7,
+                    "level": 20,
+                    "metadata": {
+                        "id_build": 951154,
+                        "id_equipment": 20666,
+                        "side": 23
+                    }
+                }
+            ]
+        },
+        {
+            "name_job": "Roublard",
+            "id_build": 951152,
+            "name_build": "dpt",
+            "date_build": "07-11-2023",
+            "level_build": 80,
+            "id_job": 13,
+            "link_build": "c6d4c",
+            "private": 0,
+            "id_user": 14093,
+            "user": null,
+            "pictos": [
+                {
+                    "id_picto": 1,
+                    "name_picto": "D\u00e9g\u00e2ts",
+                    "gfx_id": "damage",
+                    "group_id": 1,
+                    "pivot": {
+                        "id_build": 951152,
+                        "id_picto": 1
+                    }
+                },
+                {
+                    "id_picto": 5,
+                    "name_picto": "Donjon",
+                    "gfx_id": "dungeon",
+                    "group_id": 2,
+                    "pivot": {
+                        "id_build": 951152,
+                        "id_picto": 5
+                    }
+                }
+            ],
+            "equipments_light": [
+                {
+                    "id_equipment": 23566,
+                    "gfx_id": "13415204",
+                    "side": 134,
+                    "id_rarity": 3,
+                    "level": 79,
+                    "metadata": {
+                        "id_build": 951152,
+                        "id_equipment": 23566,
+                        "side": 134
+                    }
+                }
+            ]
+        },
+        {
+            "name_job": "X\u00e9lor",
+            "id_build": 951149,
+            "name_build": "Me",
+            "date_build": "07-11-2023",
+            "level_build": 230,
+            "id_job": 5,
+            "link_build": "768b9",
+            "private": 0,
+            "id_user": 23749,
+            "user": null,
+            "pictos": [],
+            "equipments_light": []
+        },
+        {
+            "name_job": "Sram",
+            "id_build": 951148,
+            "name_build": "sram 140",
+            "date_build": "07-11-2023",
+            "level_build": 140,
+            "id_job": 4,
+            "link_build": "58411",
+            "private": 0,
+            "id_user": 19029,
+            "user": null,
+            "pictos": [
+                {
+                    "id_picto": 1,
+                    "name_picto": "D\u00e9g\u00e2ts",
+                    "gfx_id": "damage",
+                    "group_id": 1,
+                    "pivot": {
+                        "id_build": 951148,
+                        "id_picto": 1
+                    }
+                }
+            ],
+            "equipments_light": [
+                {
+                    "id_equipment": 21584,
+                    "gfx_id": "12015392",
+                    "side": 120,
+                    "id_rarity": 4,
+                    "level": 140,
+                    "metadata": {
+                        "id_build": 951148,
+                        "id_equipment": 21584,
+                        "side": 120
+                    }
+                },
+                {
+                    "id_equipment": 25780,
+                    "gfx_id": "13425778",
+                    "side": 134,
+                    "id_rarity": 4,
+                    "level": 140,
+                    "metadata": {
+                        "id_build": 951148,
+                        "id_equipment": 25780,
+                        "side": 134
+                    }
+                }
+            ]
+        }
+    ]
+}
