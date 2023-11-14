@@ -8,7 +8,7 @@ interface IServiceResponse<T> {
 
 class ApiService {
   private axiosInstance = axios.create({
-    baseURL: process.env.API || 'http://localhost:3000/',
+    baseURL: process.env.API || 'http://localhost:8000/',
   });
 
   public async get<T>(url: string): Promise<IServiceResponse<T>> {
