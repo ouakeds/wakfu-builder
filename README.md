@@ -12,7 +12,7 @@ This project is currently a draft and includes:
 
 ## 📦 Tech Stack
 
-- **Frontend:** Vue 3 + TypeScript
+- **Frontend:** React + TypeScript
 - **Styling:** Tailwind CSS
 - **State Management:** (TBD)
 - **Backend:** (Planned)
